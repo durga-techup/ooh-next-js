@@ -10,9 +10,9 @@ import { apiFinalResponse } from '../../../../../backend.utils/apiResponse';
 import { payloadDecrypt } from '../../../../../backend.utils/encryption';
 
 import * as Twilio from 'twilio';
-const accountSid = NEXT_PUBLIC_accountSid
-const authToken = NEXT_PUBLIC_authToken
-const client = Twilio(accountSid, authToken);
+// const accountSid = NEXT_PUBLIC_accountSid
+// const authToken = NEXT_PUBLIC_authToken
+// const client = Twilio(accountSid, authToken);
 
 const schema = Joi.object({
     email: Joi.string().email().required(),
@@ -31,29 +31,29 @@ export async function POST(req) {
     const { error } = schema.validate({ email, password });
 
     if (error) return NextResponse.json(apiFinalResponse({ success: false, message: error.details[0].message.replace(/['"]+/g, '') }));
-    const sendSMS = () => {
-        client.messages
-            .create({
-                to: '+919424359132',
-                from: '+15015047117',
-                body: 'Hi I am from Next JS app',
-            })
-            .then((data) => {
-                // Access details about the last request
-                console.log("data",data)
-                // console.log(client.lastRequest.method);
-                // console.log(client.lastRequest.url);
-                // console.log(client.lastRequest.auth);
-                // console.log(client.lastRequest.params);
-                // console.log(client.lastRequest.headers);
-                // console.log(client.lastRequest.data);
+    // const sendSMS = () => {
+    //     client.messages
+    //         .create({
+    //             to: '+919424359132',
+    //             from: '+15015047117',
+    //             body: 'Hi I am from Next JS app',
+    //         })
+    //         .then((data) => {
+    //             // Access details about the last request
+    //             console.log("data",data)
+    //             // console.log(client.lastRequest.method);
+    //             // console.log(client.lastRequest.url);
+    //             // console.log(client.lastRequest.auth);
+    //             // console.log(client.lastRequest.params);
+    //             // console.log(client.lastRequest.headers);
+    //             // console.log(client.lastRequest.data);
 
-                // Access details about the last response
-                // console.log(client.httpClient.lastResponse.statusCode);
-                // console.log(client.httpClient.lastResponse.body);
-            });
+    //             // Access details about the last response
+    //             // console.log(client.httpClient.lastResponse.statusCode);
+    //             // console.log(client.httpClient.lastResponse.body);
+    //         });
 
-    }
+    // }
 
     try {
         // sendSMS()
