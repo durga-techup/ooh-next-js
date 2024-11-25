@@ -1,7 +1,8 @@
 // pages/api/_middleware.js
 // import logger from './backend.utils/logger';
 export const config = {
-  runtime: 'experimental-edge', // Ensure this route runs in the Edge runtime
+  // runtime: 'experimental-edge', // Ensure this route runs in the Edge runtime
+  runtime: 'edge', // Ensure this route runs in the Edge runtime
 };
 
 import { NextResponse } from 'next/server';
