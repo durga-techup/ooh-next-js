@@ -140,7 +140,7 @@ export default function LogIn() {
                                     <div className="">
                                         <div className="relative">
                                             <div className="absolute inset-y-0 start-0 top-0 flex items-center ps-2 pointer-events-none">
-                                                <MailOpen className="" />
+                                                <MailOpen  className="h-3.5 w-3.5"  />
                                             </div>
                                             <Input
                                                 className=" !ps-10"
@@ -164,7 +164,7 @@ export default function LogIn() {
                                     <div className="mt-5">
                                         <div className="relative">
                                             <div className="absolute inset-y-0 start-0 top-0 flex items-center ps-2 pointer-events-none">
-                                                <Lock />
+                                                <Lock className="h-3.5 w-3.5"  />
                                             </div>
                                             <Input
                                                 className=" !ps-10"

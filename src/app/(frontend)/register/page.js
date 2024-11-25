@@ -156,7 +156,7 @@ export default function CardWithForm() {
                                     <div className="">
                                         <div className="relative">
                                             <div className="absolute inset-y-0 start-0 top-0 flex items-center ps-2 pointer-events-none">
-                                                <User className="" />
+                                                <User className="h-3.5 w-3.5"  />
                                             </div>
                                             <Input type="text" className=" !ps-10" id="name" name="name" placeholder="your name" value={formik.values.name} onChange={formik.handleChange} onBlur={formik.handleBlur} />
                                         </div>
@@ -167,7 +167,7 @@ export default function CardWithForm() {
                                     <div className="mt-5">
                                         <div className="relative">
                                             <div className="absolute inset-y-0 start-0 top-0 flex items-center ps-2 pointer-events-none">
-                                                <MailOpen className="" />
+                                                <MailOpen className="h-3.5 w-3.5"  />
                                             </div>
                                             <Input type="email" className=" !ps-10" id="email" name="email" placeholder="example@email.com" value={formik.values.email} onChange={formik.handleChange} onBlur={formik.handleBlur} />
                                         </div>
@@ -178,7 +178,7 @@ export default function CardWithForm() {
                                     <div className="mt-5">
                                         <div className="relative">
                                             <div className="absolute inset-y-0 start-0 top-0 flex items-center ps-2 pointer-events-none">
-                                                <MobileIcon className="" />
+                                                <MobileIcon className="h-3.5 w-3.5"  />
                                             </div>
                                             <Input type="text" className=" !ps-10" id="mobNo" name="mobNo" placeholder="ex:9874561230" value={formik.values.mobNo} onChange={formik.handleChange} onBlur={formik.handleBlur} />
                                         </div>
@@ -189,7 +189,8 @@ export default function CardWithForm() {
                                     <div className="mt-5">
                                         <div className="relative">
                                             <div className="absolute inset-y-0 start-0 top-0 flex items-center ps-2 pointer-events-none">
-                                                <Lock />
+                                               
+                                                <Lock className="h-3.5 w-3.5"  />
                                             </div>
                                             <Input className=" !ps-10" id="password" name="password" type="password" placeholder="password" value={formik.values.password} onChange={formik.handleChange} onBlur={formik.handleBlur} />
                                         </div>
@@ -200,7 +201,7 @@ export default function CardWithForm() {
                                     <div className="mt-5">
                                         <div className="relative">
                                             <div className="absolute inset-y-0 start-0 top-0 flex items-center ps-2 pointer-events-none">
-                                                <Lock />
+                                                <Lock className="h-3.5 w-3.5"  />
                                             </div>
                                             <Input className=" !ps-10" id="confirmPassword" name="confirmPassword" type="password" placeholder="confirm password" value={formik.values.confirmPassword} onChange={formik.handleChange} onBlur={formik.handleBlur} />
                                         </div>
