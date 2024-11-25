@@ -27,7 +27,7 @@ import { registerApi } from "../../../front.utils/apis/register"
 // import { GoogleOAuthProvider } from '@react-oauth/google';
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from "jwt-decode";
-import FacebookLogin from 'react-facebook-login';
+// import FacebookLogin from 'react-facebook-login';
 import { MobileIcon } from "@radix-ui/react-icons"
 
 
