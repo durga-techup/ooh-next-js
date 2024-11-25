@@ -25,7 +25,7 @@ import PayloadEncryption, { responseDecrypt } from "../../../front.utils/payload
 import { privateApi } from "../../../front.utils/apiService"
 import { registerApi } from "../../../front.utils/apis/register"
 // import { GoogleOAuthProvider } from '@react-oauth/google';
-import { GoogleLogin } from '@react-oauth/google';
+// import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from "jwt-decode";
 // import FacebookLogin from 'react-facebook-login';
 import { MobileIcon } from "@radix-ui/react-icons"
@@ -212,7 +212,7 @@ export default function CardWithForm() {
                                         <Button className="w-[100%]" type="submit">Register</Button>
                                     </div>
                                     <div className="mt-5">
-                                        <GoogleLogin
+                                        {/* <GoogleLogin
                                             onSuccess={credentialResponse => {
                                                 console.log(credentialResponse?.credential);
                                                 var decoded = jwtDecode(credentialResponse?.credential);
@@ -220,7 +220,7 @@ export default function CardWithForm() {
                                             }}
                                             onError={(error) => {
                                                 console.log('Login Failed', error);
-                                            }} />
+                                            }} /> */}
                                     </div>
                                     {/* <div className="mt-5">
                                         <FacebookLogin
