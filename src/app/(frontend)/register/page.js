@@ -52,19 +52,19 @@ export default function CardWithForm() {
             const responseData = await registerApi(payload)
             console.log("responseData", responseData)
             if (responseData?.success) {
-                toast("Success!", {
+                toast.success("Success!", {
                     description: responseData?.message,
                     position: "top-right",
                 })
                 router.push("/login")
             } else {
-                toast("Failed!", {
+                toast.error("Failed!", {
                     description: responseData?.message,
                     position: "top-right",
                 })
             }
         } catch (error) {
-            toast("Failed!", {
+            toast.error("Failed!", {
                 description: error?.message,
                 position: "top-right",
             })

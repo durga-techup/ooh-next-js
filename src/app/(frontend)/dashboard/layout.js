@@ -30,6 +30,8 @@ export default function Layout({ children }) {
     }
   }, [isAuthentication])
 
+  
+
   if (!isAuthentication) {
     return <ComponentLoading />
   }

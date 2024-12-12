@@ -30,8 +30,6 @@ import CryptoJS from 'crypto-js';
 import PayloadEncryption from "../../../front.utils/payloadEncryption"
 import { loginApi } from "../../../front.utils/apis/login"
 
-
-
 export default function LogIn() {
     const dispatch = useDispatch()
     const isAuthentication = useSelector(state => state.user.userInfo?.token)
@@ -70,21 +68,21 @@ export default function LogIn() {
             const responseData = apiResponse;
             if (responseData?.success) {
                 dispatch(LogInReducer(responseData?.finalData))
-                toast("Success!", {
+                toast.success("Success!", {
                     description: apiResponse?.message,
                     position: "top-right",
                 })
                 router.push("/dashboard")
 
             } else {
-                toast("Failed!", {
+                toast.error("Failed!", {
                     description: apiResponse?.message,
                     position: "top-right",
                 })
             }
 
         } catch (error) {
-            toast("Something went wrong!", {
+            toast.error("Something went wrong!", {
                 description: error.message,
                 position: "top-right",
             })
@@ -130,6 +128,14 @@ export default function LogIn() {
                     <CardTitle>LogIn</CardTitle>
                     <CardDescription>
                         Enter your email below to login to your account
+                        <br />
+
+
+
+
+
+
+
                     </CardDescription>
                 </CardHeader>
                 <CardContent >
@@ -140,7 +146,7 @@ export default function LogIn() {
                                     <div className="">
                                         <div className="relative">
                                             <div className="absolute inset-y-0 start-0 top-0 flex items-center ps-2 pointer-events-none">
-                                                <MailOpen  className="h-3.5 w-3.5"  />
+                                                <MailOpen className="h-3.5 w-3.5" />
                                             </div>
                                             <Input
                                                 className=" !ps-10"
@@ -164,7 +170,7 @@ export default function LogIn() {
                                     <div className="mt-5">
                                         <div className="relative">
                                             <div className="absolute inset-y-0 start-0 top-0 flex items-center ps-2 pointer-events-none">
-                                                <Lock className="h-3.5 w-3.5"  />
+                                                <Lock className="h-3.5 w-3.5" />
                                             </div>
                                             <Input
                                                 className=" !ps-10"

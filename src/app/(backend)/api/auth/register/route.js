@@ -20,14 +20,22 @@ const schema = Joi.object({
 
 // atvs mtoo xnnf bpbz
 
+
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    user: "smtp.gmail.com",
-    port: 465,
-    secure: true,
-    auth: {
-        user: "diurgeshselkari@gmail.com", // Your Gmail address
-        pass: "atvs mtoo xnnf bpbz", // Your Gmail password
+    // service: 'gmail',
+    // user: "smtp.gmail.com",
+    // port: 465,
+    // secure: true,
+    // auth: {
+    //     user: "diurgeshselkari@gmail.com", // Your Gmail address
+    //     pass: "atvs mtoo xnnf bpbz", // Your Gmail password
+    // },
+
+    host: 'localhost',  // MailCatcher runs on localhost
+    port: 1025,         // MailCatcher's SMTP port
+    secure: false,      // MailCatcher does not support SSL
+    tls: {
+        rejectUnauthorized: false,  // Ignore certificate errors (not necessary for MailCatcher)
     },
 });
 
@@ -69,9 +77,9 @@ export async function POST(req, res) {
     await connectDB();
     const encryptedData = await req.json();
     const decryptedPayload = await payloadDecrypt(encryptedData)
-    const { email, password, name, mobNo } =  decryptedPayload
+    const { email, password, name, mobNo } = decryptedPayload
     // console.log("decryptedPayload",await decryptedPayload)
-    const { error } =  schema.validate({ email, password, name, mobNo });
+    const { error } = schema.validate({ email, password, name, mobNo });
     let payload = {
         email, password, name, mobNo,
         mobile_verification_otp: "",
@@ -85,7 +93,7 @@ export async function POST(req, res) {
     };
     const hashedPassword = await hash(password, 12)
     payload["password"] = hashedPassword
-    const email_verification_token =  crypto.randomBytes(32).toString('hex');
+    const email_verification_token = crypto.randomBytes(32).toString('hex');
     const email_verification_token_expires = Date.now() + 3600000; // Token expires in 1 hour
     const verificationUrl = `${process.env.NEXT_PUBLIC_FRONTEND_BASEURL}/verify-email/${email_verification_token}`;
     const mailOptions = {

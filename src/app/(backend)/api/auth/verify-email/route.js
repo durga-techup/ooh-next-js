@@ -18,10 +18,10 @@ export async function POST(req) {
     await connectDB();
     // const { email, password } = await req.json();
     const encryptedData = await req.json();
-    const decryptedPayload = payloadDecrypt(encryptedData)
+    const decryptedPayload = await payloadDecrypt(encryptedData)
     console.log(decryptedPayload)
     const { email_verification_token } = (decryptedPayload)
-    const { error } = schema.validate({ email_verification_token });
+    const { error } = await schema.validate({ email_verification_token });
     if (error) return NextResponse.json(apiFinalResponse({ success: false, message: error.details[0].message.replace(/['"]+/g, '') }));
 
     try {
