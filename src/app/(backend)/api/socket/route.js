@@ -22,7 +22,7 @@ const ioHandler = (req, res) => {
             });
 
         });
-        res?.socket?.server?.io = io;
+        res.socket.server.io = io;
         console.log("Socket.IO server initialized");
     }
     res.end();
